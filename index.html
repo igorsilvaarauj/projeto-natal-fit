@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Natal Fit – Treino Pronto para Mulheres</title>
+<meta name="description" content="Treino pronto de 10 semanas para mulheres que querem emagrecer e ganhar massa muscular até o Natal.">
+
+<!-- COLE AQUI O PIXEL DO META (Facebook Pixel) -->
+
+<style>
+  :root{
+    --primary:#e63e6d;
+    --primary-dark:#c42a56;
+    --dark:#1b1b24;
+    --light:#fff7f9;
+    --gray:#6b6b78;
+    --gold:#ffb703;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',Roboto,Arial,sans-serif;color:var(--dark);line-height:1.6;background:#fff;padding-bottom:80px}
+  .container{max-width:960px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  h1,h2,h3{line-height:1.2}
+  h2{font-size:1.8rem;text-align:center;margin-bottom:12px}
+  .sub{text-align:center;color:var(--gray);margin-bottom:32px}
+
+  .topbar{background:var(--dark);color:#fff;text-align:center;padding:10px;font-size:.9rem}
+  .topbar strong{color:var(--gold)}
+
+  .hero{background:linear-gradient(135deg,#fff0f4 0%,#ffe0ea 100%);text-align:center;padding:48px 0}
+  .tag{display:inline-block;background:var(--primary);color:#fff;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:16px;letter-spacing:.5px}
+  .hero h1{font-size:2.1rem;margin-bottom:16px}
+  .hero h1 span{color:var(--primary)}
+  .hero p{font-size:1.1rem;color:var(--gray);max-width:620px;margin:0 auto 24px}
+
+  .btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;padding:18px 36px;border-radius:50px;box-shadow:0 8px 20px rgba(230,62,109,.35);transition:.2s;text-align:center}
+  .btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
+  .micro{font-size:.85rem;color:var(--gray);margin-top:12px}
+
+  .video-box{max-width:420px;margin:32px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15);background:#000;aspect-ratio:9/16}
+  .video-box iframe,.video-box video{width:100%;height:100%;border:0}
+
+  .countdown{display:flex;justify-content:center;gap:12px;margin:24px 0}
+  .countdown div{background:var(--dark);color:#fff;border-radius:12px;padding:12px 14px;min-width:68px}
+  .countdown b{display:block;font-size:1.7rem;color:var(--gold)}
+  .countdown small{font-size:.7rem;text-transform:uppercase;letter-spacing:1px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .card{background:#fff;border:1px solid #f0d9e0;border-radius:16px;padding:24px}
+  .card .ico{font-size:2rem;margin-bottom:8px}
+  .card h3{font-size:1.1rem;margin-bottom:6px}
+  .card p{color:var(--gray);font-size:.95rem}
+  .bg-light{background:var(--light)}
+
+  .steps{counter-reset:s;display:grid;gap:16px}
+  .step{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:14px;padding:18px;border:1px solid #f0d9e0}
+  .step::before{counter-increment:s;content:counter(s);background:var(--primary);color:#fff;font-weight:800;min-width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+  .weeks{display:grid;gap:12px}
+  .week{background:#fff;border-left:5px solid var(--primary);border-radius:10px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .week b{color:var(--primary)}
+
+  .list{list-style:none;max-width:620px;margin:0 auto}
+  .list li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid #f3e3e8}
+  .list li::before{content:"✔";position:absolute;left:0;color:var(--primary);font-weight:800}
+
+  .about{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center}
+  .about img{width:220px;height:220px;object-fit:cover;border-radius:50%;border:6px solid var(--primary);background:#eee}
+  .about div{flex:1;min-width:260px}
+
+  .offer{background:var(--dark);color:#fff;text-align:center}
+  .offer h2{color:#fff}
+  .price-box{background:#fff;color:var(--dark);max-width:440px;margin:24px auto;border-radius:20px;padding:32px 24px}
+  .old{text-decoration:line-through;color:var(--gray)}
+  .price{font-size:2.8rem;font-weight:900;color:var(--primary)}
+  .price small{font-size:1rem;font-weight:600}
+
+  details{background:#fff;border:1px solid #f0d9e0;border-radius:12px;padding:16px 18px;margin-bottom:12px}
+  summary{font-weight:700;cursor:pointer}
+  details p{margin-top:10px;color:var(--gray)}
+
+  footer{background:#111;color:#aaa;text-align:center;padding:32px 20px;font-size:.8rem}
+  footer p{max-width:720px;margin:0 auto 8px}
+
+  .sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:10px 16px;box-shadow:0 -4px 16px rgba(0,0,0,.12);z-index:99;text-align:center}
+  .sticky .btn{width:100%;max-width:480px;padding:14px 20px;font-size:1rem}
+
+  @media(min-width:768px){
+    .hero h1{font-size:3rem}
+    h2{font-size:2.2rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎄 Faltam <strong id="diasTopo">--</strong> dias para o Natal. Comece hoje.</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <span class="tag">TREINO PRONTO • PASSO A PASSO</span>
+    <h1>Chegue ao Natal <span>mais forte, mais definida</span> e confiante com o seu corpo</h1>
+    <p>Um treino pronto de <strong>10 semanas</strong> para mulheres que querem <strong>emagrecer e ganhar massa muscular</strong>, sem ficar perdida sem saber o que fazer na academia ou em casa.</p>
+
+    <a href="[LINK_DO_MFIT]" class="btn">QUERO COMEÇAR MEU TREINO AGORA</a>
+    <p class="micro">🔒 Pagamento seguro • Acesso imediato pelo app MFIT</p>
+
+    <div class="video-box">
+      <!-- OPÇÃO 1: YouTube/Vimeo -->
+      <!-- <iframe src="https://www.youtube.com/embed/[ID_DO_VIDEO]" allowfullscreen></iframe> -->
+      <!-- OPÇÃO 2: arquivo próprio -->
+      <video src="[LINK_DO_SEU_VIDEO.mp4]" controls playsinline poster="[CAPA.jpg]"></video>
+    </div>
+  </div>
+</header>
+
+<!-- CONTAGEM -->
+<section class="bg-light">
+  <div class="container" style="text-align:center">
+    <h2>O relógio já está correndo ⏳</h2>
+    <p class="sub">Quanto antes você começar, mais semanas de resultado você tem até o Natal.</p>
+    <div class="countdown">
+      <div><b id="d">00</b><small>Dias</small></div>
+      <div><b id="h">00</b><small>Horas</small></div>
+      <div><b id="m">00</b><small>Min</small></div>
+      <div><b id="s">00</b><small>Seg</small></div>
+    </div>
+    <a href="[LINK_DO_MFIT]" class="btn">GARANTIR MINHA VAGA</a>
+  </div>
+</section>
+
+<!-- DOR -->
+<section>
+  <div class="container">
+    <h2>Isso soa familiar?</h2>
+    <p class="sub">Você não precisa de mais um treino aleatório. Precisa de um plano.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">😩</div><h3>Treina, mas não vê mudança</h3><p>Muito esforço sem direção, sem progressão e sem estratégia.</p></div>
+      <div class="card"><div class="ico">🤯</div><h3>Não sabe por onde começar</h3><p>Vídeos demais, informação demais e nenhuma clareza do que fazer hoje.</p></div>
+      <div class="card"><div class="ico">⏰</div><h3>Rotina corrida</h3><p>Trabalho, casa, filhos... você precisa de treino que caiba no seu dia.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Começa e desiste</h3><p>Sem acompanhamento e sem metas semanais, a motivação acaba rápido.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO / INCLUSO -->
+<section class="bg-light">
+  <div class="container">
+    <h2>Conheça o Projeto Natal Fit</h2>
+    <p class="sub">Treino pensado para quem quer queimar gordura e construir músculo ao mesmo tempo.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">📅</div><h3>10 semanas organizadas</h3><p>Do primeiro dia até a semana do Natal, com evolução semana a semana.</p></div>
+      <div class="card"><div class="ico">🏋️‍♀️</div><h3>Foco em emagrecer + hipertrofia</h3><p>Treinos com sobrecarga progressiva e estratégia metabólica.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>Versão de 30 a 45 min</h3><p>Opção para dias corridos. Menos tempo, mais constância.</p></div>
+      <div class="card"><div class="ico">🎁</div><h3>Bônus: Treino de Natal</h3><p>Sessão especial para as semanas das festas, rápida e eficiente.</p></div>
+      <div class="card"><div class="ico">🏆</div><h3>Desafio da semana</h3><p>Uma meta por semana para manter você engajada e focada.</p></div>
+      <div class="card"><div class="ico">📱</div><h3>Tudo no app MFIT</h3><p>Treinos no celular, com séries, repetições e descanso, na palma da mão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JORNADA -->
+<section>
+  <div class="container">
+    <h2>Sua jornada até o Natal</h2>
+    <p class="sub">Exemplo da progressão do programa</p>
+    <div class="weeks">
+      <div class="week"><b>Semanas 1-2 • Despertar Metabólico:</b> adaptação, técnica e criação de rotina.</div>
+      <div class="week"><b>Semanas 3-5 • Construção:</b> aumento de carga e volume para estimular o músculo.</div>
+      <div class="week"><b>Semanas 6-8 • Choque de Hipertrofia:</b> intensidade maior e foco em definição.</div>
+      <div class="week"><b>Semanas 9-10 • Reta Final de Natal:</b> consolidação e bônus especial das festas.</div>
+    </div>
+    <p class="micro" style="text-align:center">*Ajuste os nomes e blocos conforme o seu treino real.</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="bg-light">
+  <div class="container">
+    <h2>Como funciona</h2>
+    <p class="sub">Simples assim:</p>
+    <div class="steps">
+      <div class="step"><div><h3>Clique no botão e faça sua inscrição</h3><p>Você será direcionada ao checkout seguro do MFIT.</p></div></div>
+      <div class="step"><div><h3>Baixe o app e acesse seu treino</h3><p>Seu programa já fica disponível para começar hoje.</p></div></div>
+      <div class="step"><div><h3>Siga o passo a passo semana a semana</h3><p>É só abrir o app, ver o treino do dia e executar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section>
+  <div class="container">
+    <h2>Para quem é este treino?</h2>
+    <p class="sub">&nbsp;</p>
+    <ul class="list">
+      <li>Mulheres que querem emagrecer e ganhar massa muscular</li>
+      <li>Quem treina na academia (ou quer adaptar para casa)*</li>
+      <li>Quem tem pouco tempo e precisa de treinos objetivos</li>
+      <li>Iniciantes e intermediárias que querem um plano pronto</li>
+      <li>Quem quer se sentir bem consigo mesma nas festas de fim de ano</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="bg-light">
+  <div class="container">
+    <div class="about">
+      <img src="[SUA_FOTO.jpg]" alt="Igor">
+      <div>
+        <h2 style="text-align:left">Quem vai guiar você</h2>
+        <p><strong>Igor [SOBRENOME]</strong> – [Profissional de Educação Física / CREF XXXXX].</p>
+        <p style="margin-top:10px">[Escreva 2 ou 3 linhas: sua experiência, quantas alunas já treinou, seu método e por que você criou este programa.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section>
+  <div class="container">
+    <h2>O que as alunas dizem</h2>
+    <p class="sub">[Troque por depoimentos REAIS com autorização das alunas]</p>
+    <div class="grid">
+      <div class="card"><p>“[Depoimento real 1]”</p><p style="margin-top:8px"><strong>— Nome, cidade</strong></p></div>
+      <div class="card"><p>“[Depoimento real 2]”</p><p style="margin-top:8px"><strong>— Nome, cidade</strong></p></div>
+      <div class="card"><p>“[Depoimento real 3]”</p><p style="margin-top:8px"><strong>— Nome, cidade</strong></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="offer" id="oferta">
+  <div class="container">
+    <h2>Comece hoje o seu Projeto Natal Fit</h2>
+    <p>Treino completo de 10 semanas + bônus de Natal</p>
+    <div class="price-box">
+      <p class="old">De R$ [PREÇO_CHEIO]</p>
+      <p>por apenas</p>
+      <div class="price"><small>R$</small> [PREÇO]</div>
+      <p style="color:var(--gray);margin-bottom:20px">ou [X]x de R$ [VALOR] no cartão</p>
+      <a href="[LINK_DO_MFIT]" class="btn" style="width:100%">QUERO MEU TREINO AGORA</a>
+      <p class="micro">🔒 Compra 100% segura • Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container" style="max-width:720px">
+    <h2>Perguntas frequentes</h2>
+    <p class="sub">&nbsp;</p>
+    <details><summary>Preciso ir à academia?</summary><p>[Responda conforme seu treino: academia, casa ou ambos.]</p></details>
+    <details><summary>Serve para iniciantes?</summary><p>[Explique o nível do treino e as adaptações disponíveis.]</p></details>
+    <details><summary>Como recebo o treino?</summary><p>Depois da compra, você acessa tudo pelo app MFIT, direto no celular.</p></details>
+    <details><summary>Quanto tempo por dia preciso treinar?</summary><p>O programa tem opção de treinos de 30 a 45 minutos para encaixar na sua rotina.</p></details>
+    <details><summary>Em quanto tempo vejo resultado?</summary><p>Os resultados variam de pessoa para pessoa e dependem de dedicação, alimentação, sono e constância. O programa dá a estrutura; a execução é sua.</p></details>
+    <details><summary>E se eu tiver dúvidas?</summary><p>[Informe seu canal de suporte: WhatsApp, e-mail ou Instagram.]</p></details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-light" style="text-align:center">
+  <div class="container">
+    <h2>O Natal chega com ou sem treino.<br>A diferença é como você vai chegar. 💪</h2>
+    <p class="sub">Comece hoje e aproveite cada semana até dezembro.</p>
+    <a href="[LINK_DO_MFIT]" class="btn">COMEÇAR AGORA</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Igor [SOBRENOME] – Todos os direitos reservados.</p>
+  <p>Os resultados podem variar de pessoa para pessoa e dependem de dedicação, alimentação e rotina. Este programa não substitui acompanhamento médico ou nutricional. Consulte um profissional de saúde antes de iniciar qualquer atividade física.</p>
+  <p>Este site não é afiliado ao Facebook ou à Meta Platforms, Inc.</p>
+</footer>
+
+<!-- BOTÃO FIXO MOBILE -->
+<div class="sticky"><a href="[LINK_DO_MFIT]" class="btn">QUERO MEU TREINO AGORA</a></div>
+
+<script>
+  // Contagem regressiva até 25/12/2026 às 00:00
+  const alvo = new Date('2026-12-25T00:00:00-03:00').getTime();
+  function tick(){
+    const diff = alvo - Date.now();
+    if(diff <= 0){return;}
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor(diff%86400000/3600000);
+    const m = Math.floor(diff%3600000/60000);
+    const s = Math.floor(diff%60000/1000);
+    const p = n => String(n).padStart(2,'0');
+    document.getElementById('d').textContent = p(d);
+    document.getElementById('h').textContent = p(h);
+    document.getElementById('m').textContent = p(m);
+    document.getElementById('s').textContent = p(s);
+    document.getElementById('diasTopo').textContent = d;
+  }
+  tick(); setInterval(tick,1000);
+</script>
+</body>
+</html>
